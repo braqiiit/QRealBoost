@@ -9,3 +9,4 @@ We perform 20-25 iterations for boosting the training accuracy. The quantum circ
 ![QReal Boost Circuit](https://user-images.githubusercontent.com/78695257/154253475-8529c2f3-f755-451a-91c0-f0f83dc6916e.PNG)
 
 
+|D_t^i\rangle
