@@ -10,7 +10,8 @@ Original file is located at
 from qiskit.algorithms import AmplificationProblem
 from qiskit.algorithms import Grover
 from qiskit.providers.aer import AerSimulator
-from learners import weaklearner
+from learner import weaklearner
+from qiskit import Aer
 
 # backend = AerSimulator()
 backend = Aer.get_backend('aer_simulator')
