@@ -19,7 +19,7 @@ In the second experiment (see [MNIST]), RealBoost appears to overfit the trainin
 
 ## Quantum Boosting Package
 
-Both QRealBoost and QAdaBoost can be run using the quantumboosting module given in the package, by importing the classes qrealboost and qadaboost from it. Rest of the supporting modules given in the package are to be downloaded too.
+Both QRealBoost and QAdaBoost can be run using the *quantumboosting* module given in the package, by importing from it the classes *qrealboost* and *qadaboost*. Rest of the supporting modules given in the package are to be downloaded too.
 
 ### Methods -
 
@@ -33,7 +33,7 @@ Both QRealBoost and QAdaBoost can be run using the quantumboosting module given 
       <br> The default values of num_iterations is 25.
     - no_of_Q (optional) - the sample complexity
       <br> The default value of no_of_Q is 4.
- - **Returns** -
+  - **Returns** -
    Training Accuracy of each iteration, Training Accuracy vs Iterations curve, and values of algorithm parameters to show the inner-working of the algorithm.
 
 - **predict**(*X,y*)
