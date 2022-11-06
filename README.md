@@ -23,11 +23,12 @@ Both QRealBoost and QAdaBoost can be run using the quantumboosting module given 
 
 ### Methods -
 
-- **fit**(*X, y, num_iterations,  no_of_Q*)
+- **fit**(*X, y, num_iterations,  no_of_Q*) 
+<br> Build a boosted classifier from the training set (X, y)
 #### Parameters -
 - X - matrix of shape (n_features, n_samples)
-<br> Due to IBM's simulators' current qubit limitations, the algorithm takes 64 samples at most, and n_samples can be in powers of 2 only. The user can either input data with size in powers of 2, or the algorithm takes the top 2^k samples out of the input data, where k = floor(log2(n_samples)).   
-- y - the target class labels.
+<br> The training input samples. Due to IBM's simulators' current qubit limitations, the algorithm takes 64 samples at most, and n_samples can be in powers of 2 only. The user can either input data with size in powers of 2, or the algorithm takes the top 2^k samples out of the input data, where k = floor(log2(n_samples)).   
+- y - the target class labels of X.
 - num_iterations (optional) - the number of iterations
 <br> The default values of num_iterations is 25.
 - no_of_Q (optional) - the sample complexity
@@ -36,9 +37,10 @@ Both QRealBoost and QAdaBoost can be run using the quantumboosting module given 
 Training Accuracy of each iteration, Training Accuracy vs Iterations curve, and values of algorithm parameters to show the inner-working of the algorithm.
 
 - **predict**(*X,y*)
+<br> Return the accuracy on the given test data and labels
 #### Parameters -
 - X - matrix of shape (n_features, n_samples)
-<br> Currently this has to be same in size as the Training data.
+<br> The testing input samples. Currently this has to be same in size as the Training data.
 - y - the true class labels of X.
 #### Returns -
 Testing Accuracy of the algorithm and the Testing Accuracy vs Iterations curve.
