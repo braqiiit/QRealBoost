@@ -29,16 +29,16 @@ Both QRealBoost and QAdaBoost can be run using the quantumboosting module given 
 <br> Due to IBM's simulators' current qubit limitations, the algorithm takes 64 samples at most, and n_samples can be in powers of 2 only. The user can either input data with size in powers of 2, or the algorithm takes the top 2^k samples out of the input data, where k = floor(log2(n_samples)).   
 - y - the target class labels.
 - num_iterations (optional) - the number of iterations
-The default values of num_iterations is 25.
+<br> The default values of num_iterations is 25.
 - no_of_Q (optional) - the sample complexity
-The default value of no_of_Q is 4.
+<br> The default value of no_of_Q is 4.
 #### Returns -
 Training Accuracy of each iteration, Training Accuracy vs Iterations curve, and values of algorithm parameters to show the inner-working of the algorithm.
 
 - predict(X,y)
 #### Parameters -
 - X - matrix of shape (n_features, n_samples)
-Currently this has to be same in size as the Training data.
+<br> Currently this has to be same in size as the Training data.
 - y - the true class labels of X.
 #### Returns -
 Testing Accuracy of the algorithm and the Testing Accuracy vs Iterations curve.
