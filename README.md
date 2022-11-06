@@ -17,6 +17,24 @@ In the first experiment (see [BCDataset]), we observe that both QRealBoost and Q
 ![MNIST](./MNIST_32.png)
 In the second experiment (see [MNIST]), RealBoost appears to overfit the training samples and suffers from the worst generalization error out of all four algorithms. AdaBoost has a poor convergence rate and generalization error as well. QRealBoost and QAdaBoost perform similarly in training accuracy, with QRealBoost narrowly beating QAdaBoost via faster convergence and a tighter deviation. Regarding generalization abilities, QAdaBoost loses out to QRealBoost in overall test accuracy and deviation over experiments, albeit with a much smaller margin. These are encouraging observations, especially considering that QRealBoost trains on 8 samples at every iteration, while the classical algorithms have access to all the 32 samples every iteration.
 
+## Quantum Boosting Package -
+
+Both QRealBoost and QAdaBoost can be run using the quantumboosting module given in the package, by importing the classes qrealboost and qadaboost from it. Rest of the supporting modules given in the package are to be downloaded too.
+
+### Methods -
+
+- fit(X, y, num_iterations,  no_of_Q)
+#### Parameters -
+-- X - matrix of shape (n_features, n_samples)
+Due to IBM's simulators' current qubit limitations, the algorithm takes 64 samples at most, and n_samples can be in powers of 2 only. The user can either input data with size in powers of 2, or the algorithm takes the top 2^k samples out of the input data, where k = floor(log2(n_samples)).   
+-- y - the target class labels.
+-- num_iterations (optional) - the number of iterations
+The default values of num_iterations is 25.
+-- no_of_Q (optional) - the sample complexity
+The default value of no_of_Q is 4.
+
+- predict(X,y)
+
 ## References -
 
 - [1] [Breast Cancer Dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)
