@@ -30,7 +30,7 @@ Both QRealBoost and QAdaBoost can be run using the *quantumboosting* module give
       <br> The training input samples. Due to IBM's simulators' current qubit limitations, the algorithm takes 64 samples at most, and n_samples can be in powers of 2 only. The user can either input data with size in powers of 2, or the algorithm takes the top 2^k samples out of the input data, where k = floor(log2(n_samples)).   
     - y - the target class labels of X.
     - num_iterations (optional) - the number of iterations
-      <br> The default values of num_iterations is 25.
+      <br> The default value of num_iterations is 25.
     - no_of_Q (optional) - the sample complexity
       <br> The default value of no_of_Q is 4.
   - **Returns** -
