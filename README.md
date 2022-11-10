@@ -21,7 +21,7 @@ In the second experiment (see [MNIST]), RealBoost appears to overfit the trainin
 
 Both QRealBoost and QAdaBoost can be run using the [*quantumboosting*](https://github.com/braqiiit/QRealBoost/blob/main/Package/quantumboosting.py) module given in the package, by importing from it the classes *qrealboost* and *qadaboost*. Rest of the supporting modules given in the package are to be downloaded too.
 
-Refer to the examples that we have provided for [qrealboost](https://github.com/braqiiit/QRealBoost/blob/main/Package/running%20qrealboost.ipynb) and [qadaboost](https://github.com/braqiiit/QRealBoost/blob/main/Package/running_qadaboost.ipynb) which will help you in understanding the usage of the package. 
+Refer to the examples that we have provided for [qrealboost](https://github.com/braqiiit/QRealBoost/blob/main/Package/running_qrealboost.ipynb) and [qadaboost](https://github.com/braqiiit/QRealBoost/blob/main/Package/running_qadaboost.ipynb) which will help you in understanding the usage of the package. 
 ### Methods -
 
 - **fit**(*X, y, num_iterations,  no_of_Q*) 
