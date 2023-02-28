@@ -29,7 +29,7 @@ from qiskit.visualization import plot_histogram, plot_bloch_multivector
 from qiskit import IBMQ
 from sklearn.cluster import KMeans
 import sklearn
-from sklearn.model_selection import train_test_split
+
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score
