@@ -2,8 +2,7 @@
 # coding: utf-8
 
 # # Q Real Boost implementation 
-# 
-# New boosting implementation without QRAM, and with estimation and all for conference
+
 
 # In[1]:
 
@@ -29,21 +28,15 @@ from qiskit.visualization import plot_histogram, plot_bloch_multivector
 from qiskit import IBMQ
 from sklearn.cluster import KMeans
 import sklearn
-from sklearn import svm
-
-from sklearn.neural_network import MLPClassifier
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from sklearn.datasets import load_iris
+
 from sklearn.metrics import accuracy_score
-from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
 
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
+
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.multiclass import OneVsRestClassifier
@@ -188,7 +181,7 @@ def numConcat(num1, num2): # this should actually do all the additions in the fo
   
     return num1
 
-## for convertign from decimal to binary 
+## for converting from decimal to binary 
 def decimalToBinary(n,no_of_places):
     num = no_of_places ## this will be equal to mc
     binary = bin(n).replace("0b", "")
@@ -293,19 +286,15 @@ def rot_circuit():
     return qc
 
 
-# # Data set
-# 
-# Dataset will be extracted in a different file and we will use the stored arrays here. Look ito Breast cancer test train split file. 
+"""## Dataset - MNIST"""
 
-# ### Breast Cancer data set
-# 
-# look at sklearn documentation for more information regarding this data set!!
+
+# The data samples have been extracted and preporcessed from the dataset provided by sci-kit learn.
+# For complete details visit the Datasets folder
 
 # In[95]:
 
 
-
-## from now on we will 
 X = np.array([[-0.80589907, -0.59042291, -0.05324325,  0.10774176, -0.04505932],
        [ 0.06256734, -0.37244006,  0.0939138 , -0.2033949 , -0.94811908],
        [-0.84338317, -0.6326198 , -0.43462352,  0.24523402, -0.52480534],
