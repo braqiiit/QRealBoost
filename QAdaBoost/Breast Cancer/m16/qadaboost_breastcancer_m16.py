@@ -74,8 +74,8 @@ def binaryToDecimal(binary):
         i += 1
     return decimal 
     
-def numConcat(num1, num2): # this should actually do all the additions in the form of strings and then when you finally
-                           # take out whatever is stored in the matrix then you should actually convert that to int
+def numConcat(num1, num2): # this performs all the additions in the form of strings and then when you finally
+                           # take out whatever is stored in the matrix then it should be converted to int
   
      # find number of digits in num2
     digits = len(str(num2))
@@ -90,7 +90,7 @@ def numConcat(num1, num2): # this should actually do all the additions in the fo
   
     return num1
 
-## for convertign from decimal to binary 
+## for converting from decimal to binary 
 def decimalToBinary(n,no_of_places):
     num = no_of_places ## this will be equal to mc
     binary = bin(n).replace("0b", "")
@@ -183,17 +183,13 @@ def rot_circuit():
 
     return qc
 
-"""## Dataset - MNIST"""
+"""## Dataset - Breast Cancer"""
 
 import sklearn
 from sklearn import svm
-
-from sklearn.neural_network import MLPClassifier
-from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
@@ -203,7 +199,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.multiclass import OneVsRestClassifier
+
+# The data samples have been extracted and preporcessed from the dataset provided by sci-kit learn.
+# For complete details visit the Datasets folder
 
 X = np.array([[-0.76764442],
        [-0.61776561],
@@ -222,8 +220,7 @@ X = np.array([[-0.76764442],
        [-0.89158817],
        [-0.73638509]])
 
-y = np.array([1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1]
-)
+y = np.array([1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1])
 
 X_test = np.array([[-0.95872091],
        [-0.92576013],
@@ -283,134 +280,6 @@ def get_ht_new(X, y,Dti, no_of_Q):
 
     return  correct_d, fitted_km
 
-# def get_ht_new(X, Dti, no_of_Q):
-#     '''
-#     This function is used for returning the partitioning of the X's
-#     no_of_Q : represents the number of Q samples that must be choosen from all the M samples
-#     '''
-#     # we will extract the Q values with top Dti's
-#     Dti = np.array(Dti)
-#     ind_max = np.argpartition(Dti, -no_of_Q)[-no_of_Q:]
-
-# #     no of paritions = 2
-#     no_of_paritons = 2
-#     km = KMeans(
-#         n_clusters=no_of_paritons, init='random',
-#         n_init=10, max_iter=300,
-#         tol=1e-04, random_state=0)
-
-#     # now we will pass the corresponding X and parts with the Q samples to train the model 
-#     fitted_km = km.fit(X[ind_max])
-#     # prediction will be obtained for all the samples
-#     prediction = fitted_km.predict(X)
-#     d = prediction
-
-
-#     return  d, fitted_km
-
-# no_of_paritons = 2
-# km = KMeans(
-#     n_clusters=no_of_paritons, init='random',
-#     n_init=10, max_iter=300,
-#     tol=1e-04, random_state=0)
-
-# # now we will pass the corresponding X and parts with the Q samples to train the model 
-# fitted_km = km.fit(X)
-# # prediction will be obtained for all the samples
-# prediction = fitted_km.predict(X)
-# d = prediction
-
-# d
-
-# y=(y+1)%2
-
-# y
-
-# def original_distribution(parts, y, dti):
-#     '''
-#     This function will tell us about the original distribution of the classification data
-#     '''
-#     dti0_0 = []
-#     dti0_1 = []
-
-
-#     for i in range(len(parts)):
-#         if parts[i] == 0 and y[i] == 0:
-#             dti0_0.append(dti[i])
-#         if parts[i] == 0 and y[i] == 1:
-#             dti0_1.append(dti[i])
-
-
-#     print("Classically calculated Dti for cross checking")
-#     print("0,0 -" , len(dti0_0), "sum - ", sum(dti0_0))
-#     print("0,1 -" , len(dti0_1), "sum - ", sum(dti0_1))
-
-
-
-# def original_acc(X,y, no_of_Q):
-#     '''
-#     Function is created for checkign the accuracy of the classifier in the first iteration
-#     '''
-#     Dti = np.full(len(X),1/len(X))
-#     dti = Dti
-    
-#     preds, cls = get_ht_new(X, X, Dti, no_of_Q)
-    
-#     dti0_0 = []
-#     dti0_1 = []
-#     dti1_0 = []
-#     dti1_1= []
-#     dti2_0 = []
-#     dti2_1 = []
-
-
-#     for i in range(len(preds)):
-#         if preds[i] == 0 and y[i] == 0:
-#             dti0_0.append(dti[i])
-#         if preds[i] == 0 and y[i] == 1:
-#             dti0_1.append(dti[i])
-#         if preds[i] == 1 and y[i] == 0:
-#             dti1_0.append(dti[i])
-#         if preds[i] == 1 and y[i] == 1:
-#             dti1_1.append(dti[i])
-#         if preds[i] == 2 and y[i] == 0:
-#             dti2_0.append(dti[i])
-#         if preds[i] == 2 and y[i] == 1:
-#             dti2_1.append(dti[i])
-            
-            
-#     if sum(dti0_0) >= sum(dti0_1):
-#         y0 = 0
-#     else:
-#         y0 = 1
-#     if sum(dti1_0) >= sum(dti1_1):
-#         y1 = 0
-#     else:
-#         y1 = 1
-#     if sum(dti2_0) >= sum(dti2_1):
-#         y2 = 0
-#     else:
-#         y2 = 1
-        
-        
-#     # what is the final y's
-#     final_y = []
-    
-#     for i in range(len(preds)):
-#         if preds[i] == 0:
-#             final_y.append(y0)
-#         if preds[i] == 1:
-#             final_y.append(y1)
-#         if preds[i] == 2:
-#             final_y.append(y2)
-            
-#     acc = metrics.accuracy_score(final_y, y)
-
-#     return acc
-
-
-
-# the new function 
 
 def Oh_Dbk_custom_new(qc, qr1, qr_list, data_dict):
     '''
