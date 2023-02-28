@@ -90,7 +90,7 @@ def numConcat(num1, num2): # this should actually do all the additions in the fo
   
     return num1
 
-## for convertign from decimal to binary 
+## for converting from decimal to binary 
 def decimalToBinary(n,no_of_places):
     num = no_of_places ## this will be equal to mc
     binary = bin(n).replace("0b", "")
@@ -186,24 +186,19 @@ def rot_circuit():
 """## Dataset - MNIST"""
 
 import sklearn
-from sklearn import svm
-
-from sklearn.neural_network import MLPClassifier
-from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
-from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
-
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.multiclass import OneVsRestClassifier
+
+# The data samples have been extracted and preporcessed from the dataset provided by sci-kit learn.
+# For complete details visit the Datasets folder
 
 X64 = np.array([[-0.80589907, -0.59042291, -0.05324325,  0.10774176, -0.04505932],
        [ 0.06256734, -0.37244006,  0.0939138 , -0.2033949 , -0.94811908],
