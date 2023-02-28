@@ -2,8 +2,7 @@
 # coding: utf-8
 
 # # Q Real Boost implementation 
-# 
-# New boosting implementation without QRAM, and with estimation and all for conference
+
 
 # In[1]:
 
@@ -31,22 +30,6 @@ from sklearn.cluster import KMeans
 import sklearn
 from sklearn import svm
 
-from sklearn.neural_network import MLPClassifier
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import pandas as pd
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.metrics import accuracy_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn import datasets
-
-from sklearn import metrics
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.multiclass import OneVsRestClassifier
 
 
 # ### Helper functions
@@ -293,19 +276,22 @@ def rot_circuit():
     return qc
 
 
-# # Data set
-# 
-# Dataset will be extracted in a different file and we will use the stored arrays here. Look ito Breast cancer test train split file. 
+"""## Dataset - Breast Cancer prediction"""
 
-# ### Breast Cancer data set
-# 
-# look at sklearn documentation for more information regarding this data set!!
+import sklearn
+import pandas as pd
+import numpy as np
+from sklearn.metrics import accuracy_score
+from sklearn import datasets
 
-# In[95]:
+from sklearn import metrics
+from sklearn.model_selection import train_test_split
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
+# The data samples have been extracted and preporcessed from the dataset provided by sci-kit learn.
+# For complete details visit the Datasets folder
 
-
-## from now on we will 
 X = np.array([[-0.52961818],
        [-0.73694129],
        [-0.98076452],
