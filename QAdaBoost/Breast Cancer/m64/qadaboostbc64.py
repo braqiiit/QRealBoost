@@ -192,17 +192,13 @@ def rot_circuit():
     return qc
 
 
-"""## Dataset - Trying out with Cancer prediction"""
+"""## Dataset - Breast Cancer"""
 
 import sklearn
 from sklearn import svm
-
-from sklearn.neural_network import MLPClassifier
-from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import datasets
@@ -212,11 +208,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.multiclass import OneVsRestClassifier
 
+# The data samples have been extracted and preporcessed from the dataset provided by sci-kit learn.
+# For complete details visit the Datasets folder
 
-
-## from now on we will 
 X = np.array([[-0.92033957],
        [-0.62676039],
        [-0.28869688],
